@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda Emocional</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ayuda_emocional.css') }}">
+  <script src="{{ url_for('static', filename='js/ayuda_emocional.js') }}" defer></script>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <!-- Logo de WhatsApp -->
+      <img src="{{ url_for('static', filename='images/psicologa.png') }}" id="psicologa" alt="Psicóloga" class="image-class">
+      <h2>Ayuda Emocional</h2>
+      <!-- Botón Cerrar dentro del chat -->
+      <button id="close-chat-modal" class="close-button">Cerrar</button>
+    </div>
+    <div class="chat-body">
+      <div class="message-container" id="message-container">
+        <!-- Aquí se mostrarán los mensajes -->
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="message-input" class="message-input" placeholder="Escribe tu mensaje...">
+      <button id="send-message" class="send-button">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Aquí puedes añadir JavaScript para cerrar el modal o realizar alguna otra acción -->
+  <script>
+  document.getElementById('close-chat-modal').addEventListener('click', function () {
+  // Envía un mensaje al documento principal
+  window.parent.postMessage({ action: 'close-emotional-help-modal' }, '*');
+});
+
+  </script>
+  
+</body>
+</html>

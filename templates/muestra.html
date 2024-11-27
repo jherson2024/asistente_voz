@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Voz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/muestra.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/emergente.css') }}">
+  <script src="https://unpkg.com/node-vibrant/dist/vibrant.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Asistente de Voz</h1>
+    </header>
+    <main>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="¿Qué necesitas hacer hoy?" class="search-input">
+        <button id="search-button" class="search-button">🔍</button>
+      </div>
+      <div id="response-area" class="response-area"></div>
+
+      <!-- Nuevos Apartados -->
+      <section class="features">
+        <div class="feature">
+          <h2>Organizador de Tareas</h2>
+          <p>Planifica tu día, agenda tus actividades y mantén el control de tus metas.</p>
+          <button class="feature-button" id="open-organizer">Explorar</button>
+        </div>
+        <div class="feature">
+          <h2>Dispositivos IoT Hogar</h2>
+          <p>Controla tus dispositivos inteligentes desde un solo lugar.</p>
+          <button class="feature-button" id="open-iot">Conectar</button>
+        </div>
+        <div class="feature">
+          <h2>Ayuda Emocional</h2>
+          <p>Accede a herramientas y recursos para tu bienestar emocional.</p>
+          <button class="feature-button" id="open-emotional-help">Abrir</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Tu asistente, siempre contigo.</p>
+    </footer>
+  </div>
+
+<button id="voice-command" class="feature-button">🎤 Cambiar Estilo</button>
+  <!-- Modal para Organizador de Tareas -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div id="modal" class="modal">
+      <iframe src="/organizador" class="modal-content"></iframe>
+      <button id="close-modal" class="close-button">Cerrar</button>
+    </div>
+  </div>
+  <!-- Modal para Dispositivos IoT -->
+  <div id="iot-modal-overlay" class="modal-overlay">
+    <div id="iot-modal" class="modal">
+      <iframe src="/iot_hogar" class="modal-content"></iframe>
+      <button id="close-iot-modal" class="close-button">Cerrar</button>
+    </div>
+  </div>
+  <!-- Modal para Ayuda Emocional -->
+  <div id="emotional-help-modal-overlay" class="modal-overlay">
+    <div id="emotional-help-modal" class="modal">
+      <iframe src="/ayuda_emocional" class="modal-content"></iframe>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/inactividad.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/color_inverso.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/emergente.js') }}" defer></script>
+  <script>
+   window.addEventListener('message', (event) => {
+  // Verifica si el mensaje es para cerrar el modal de ayuda emocional
+  if (event.data.action === 'close-emotional-help-modal') {
+    const emotionalHelpModalOverlay = document.getElementById('emotional-help-modal-overlay');
+    emotionalHelpModalOverlay.style.display = 'none'; // Oculta el modal
+    document.body.classList.remove('modal-active'); // Quita el desenfoque del fondo
+  }
+});
+
+// Mostrar el modal cuando se haga clic en el botón correspondiente
+document.getElementById('open-emotional-help').addEventListener('click', () => {
+  const emotionalHelpModalOverlay = document.getElementById('emotional-help-modal-overlay');
+  emotionalHelpModalOverlay.style.display = 'flex'; // Muestra el modal
+  document.body.classList.add('modal-active'); // Desenfoca el fondo
+});
+
+  </script>
+</body>
+</html>

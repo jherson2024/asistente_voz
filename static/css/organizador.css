@@ -1,0 +1,182 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    flex-direction: column; /* Configura el flujo de los elementos para usar un diseño de columna */
+    min-height: 100vh; 
+    color: #333;
+}
+
+header.header {
+    text-align: center;
+    background: #494841;
+    color: white;
+    padding: 10px; /* Menos relleno vertical */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Ajuste del tamaño de fuente */
+    font-weight: 600;
+}
+
+.container {
+    flex: 1; 
+    max-width: 800px;
+    margin: 10px auto; /* Reduce espacio superior e inferior */
+    padding: 10px; /* Menos relleno interno */
+    background: white;
+    box-shadow: 0 4px 6px rgba(123, 108, 108, 0.1);
+    border-radius: 10px;
+}
+
+/* Task Form Styles */
+.task-form {
+    margin-bottom: 8px; /* Reduce espacio inferior del formulario */
+}
+
+.task-form h2 {
+    margin-top:0px; 
+    margin-bottom: 0px; /* Reduce espacio debajo del encabezado */
+    font-weight: 300;
+    font-size: 1.2rem; /
+}
+
+.task-form form {
+    display: flex;
+    gap: 6px; /* Menos espacio entre los elementos del formulario */
+    flex-wrap: wrap; 
+}
+
+.task-form input,
+.task-form select {
+    flex: 1;
+    padding: 6px; /* Menos relleno interno */
+    border: 1px solid #bba9a9;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.task-form .btn {
+    padding: 6px 12px; /* Menos espacio interno en el botón */
+    background: #45423c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.task-form .btn:hover {
+    background: #a09845;
+}
+/* Task List Styles */
+.task-list {
+    margin-top: 8px; /* Reduce el espacio superior */
+}
+.task-list h2 {
+    margin-bottom:0 0 5px; /* Reduce espacio debajo del encabezado */
+    font-weight: 400;
+    font-size: 1.2rem; 
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* Establece el límite máximo de altura */
+    overflow-y: auto; /* Añade scroll vertical si excede el límite */
+    transition: max-height 0.3s ease; 
+}
+.task-list ul.empty {
+    max-height: 50px; /* Tamaño pequeño cuando no hay tareas */
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 6px 10px; /* Menos espacio interno */
+    margin-bottom: 4px; /* Menos espacio entre tareas */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.task-list li .task-name {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.task-list li .priority {
+    padding: 3px 6px; /* Reduce espacio interno en las etiquetas de prioridad */
+    font-size: 0.8rem; /* Disminuye ligeramente el tamaño de texto */
+    border-radius: 5px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.task-list li .priority.alta {
+    background: #f44336;
+}
+
+.task-list li .priority.media {
+    background: #ff9800;
+}
+
+.task-list li .priority.baja {
+    background: #8bc34a;
+}
+
+.task-list li button {
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px; /* Menos espacio interno */
+    cursor: pointer;
+    font-size: 0.8rem; 
+}
+
+.task-list li button:hover {
+    background: #d81b60;
+}
+
+/* Footer */
+.footer {
+    position: fixed; /* Fija el pie de página en la ventana */
+    bottom: 0; /* Lo pega al fondo */
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    background: #6b6723;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Asegura que esté encima del contenido */
+}
+.sector-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0px; 
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#currentSector {
+    font-weight: bold;
+    font-size: 1rem;
+}

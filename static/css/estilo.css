@@ -1,0 +1,20 @@
+/* Posición del botón */
+#voice-command {
+    position: absolute; /* Permite posicionar el botón en un lugar específico */
+    bottom: 20px;          /* Distancia desde la parte superior de la página */
+    right: 20px;        /* Distancia desde la parte derecha de la página */
+    padding: 10px 20px; /* Espaciado interno para que el botón sea cómodo de usar */
+    font-size: 16px;    /* Tamaño del texto */
+    background-color: #007BFF; /* Color de fondo */
+    color: white;       /* Color del texto */
+    border: none;       /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;    /* Cambia el cursor al pasar por encima */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto moderno */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color al pasar el mouse */
+  }
+  
+  #voice-command:hover {
+    background-color: #1a2e42; /* Color más oscuro al pasar el mouse */
+  }
+  

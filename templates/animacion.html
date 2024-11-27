@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animated Flower</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(239, 209, 149, 0.471);
+            height: 100vh;
+            overflow: hidden;
+            transition: opacity 1s ease;
+        }
+        
+        body.fade-out {
+            opacity: 0;
+        }
+
+        .flower {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            animation: spin 10s linear infinite; /* Animación de rotación */
+            top: -40px; 
+        }
+
+        .petal {
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: red;
+            border-radius: 50%;
+            transform-origin: bottom center;
+            top: 0;
+            left: 60px;
+        }
+
+        /* Colores de los pétalos */
+        .petal:nth-child(1) { transform: rotate(0deg); background: #ff0000; }
+        .petal:nth-child(2) { transform: rotate(45deg); background: #ff7f00; }
+        .petal:nth-child(3) { transform: rotate(90deg); background: #ffff00; }
+        .petal:nth-child(4) { transform: rotate(135deg); background: #00ff00; }
+        .petal:nth-child(5) { transform: rotate(180deg); background: #0000ff; }
+        .petal:nth-child(6) { transform: rotate(225deg); background: #4b0082; }
+        .petal:nth-child(7) { transform: rotate(270deg); background: #8b00ff; }
+        .petal:nth-child(8) { transform: rotate(315deg); background: #ff0000; }
+
+        .center {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #ecd549;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Semillas en espiral */
+        .seed {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ae7846;
+            border-radius: 50%;
+            animation: appear 2s ease-in infinite;
+        }
+
+        .seed:nth-child(1) { top: 50%; left: 70%; animation-delay: 0.1s; }
+        .seed:nth-child(2) { top: 55%; left: 60%; animation-delay: 0.3s; }
+        .seed:nth-child(3) { top: 60%; left: 50%; animation-delay: 0.5s; }
+        .seed:nth-child(4) { top: 65%; left: 40%; animation-delay: 0.7s; }
+        .seed:nth-child(5) { top: 70%; left: 30%; animation-delay: 0.9s; }
+
+        /* Animaciones */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes appear {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.5); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="flower">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+        <div class="seed"></div>
+        <div class="seed"></div>
+        <div class="seed"></div>
+        <div class="seed"></div>
+        <div class="seed"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/animacion.js') }}" defer></script>
+</body>
+</html>

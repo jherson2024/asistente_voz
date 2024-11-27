@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh; /* Asegura que ocupe toda la pantalla */
+  overflow: hidden; /* Evita scroll */
+  background-color:#5d3d9a
+}
+
+.chat-container {
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100%; /* Ocupa todo el alto */
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco con transparencia */
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+  border-radius: 0; /* Elimina bordes redondeados */
+  display: flex;
+  flex-direction: column; /* Mantén la estructura del chat */
+  box-shadow: none; /* Opcional: elimina la sombra */
+}
+  
+  
+  /* Cabecera del chat */
+/* Estilo del botón Cerrar dentro del chat */
+.chat-header {
+    background-color: #128C7E;  /* Verde característico de WhatsApp */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.close-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+  
+  .chat-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .chat-header h2 {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  /* Área de mensajes */
+  .chat-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message {
+    background-color: #e5e5e5;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+  }
+  
+  .message.received {
+    background-color: #fff;
+    align-self: flex-start;
+  }
+  
+  /* Pie del chat */
+  .chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .message-input {
+    width: 85%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .send-button {
+    width: 15%;
+    padding: 10px;
+    margin-left: 5px;
+    border: none;
+    background-color: #128C7E;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #075e54;
+  }
+  #psicologa {
+    width: 50px; /* Ajusta el ancho al tamaño deseado */
+    height: auto; /* Mantén la proporción original */
+    border: none; /* Sin bordes */
+    box-shadow: none; /* Sin sombra */
+    margin: 0; /* Sin margen */
+    display: block; /* Asegura que se comporte como un bloque */
+    position: relative; /* Superpuesto sin bordes */
+}

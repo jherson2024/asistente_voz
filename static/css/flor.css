@@ -1,0 +1,19 @@
+.dynamic-pattern {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #turtleCanvas {
+    border: 2px solid white;
+    margin-top: 10px;
+  }
+  
+  .feature-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  canvas {  
+    display: block;
+  }

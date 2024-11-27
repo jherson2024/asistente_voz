@@ -1,0 +1,94 @@
+/* Estilo global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    background-color: #f4f4f4; /* Color de fondo claro */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+  }
+  
+  /* Contenedor principal */
+  .iot-container {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    background-color: white; /* Fondo blanco */
+    display: flex;
+    flex-direction: column; /* Organización vertical */
+    box-shadow: none; /* Sin sombra */
+    border-radius: 0; /* Sin bordes redondeados */
+    padding: 0; /* Sin relleno */
+  }
+  
+  /* Cabecera */
+  .iot-header {
+    background-color: #171a0c; /* Verde azulado */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  /* Botón Cerrar */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Cuerpo principal */
+  .iot-body {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es extenso */
+    text-align: center;
+  }
+  
+  .device-list {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+  }
+  
+  .device {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Botones de control */
+  .control-button {
+    background-color: #264653;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .control-button:hover {
+    background-color: #1b3b47;
+  }
+  
+  /* Pie de página */
+  .iot-footer {
+    background-color: #264653;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  

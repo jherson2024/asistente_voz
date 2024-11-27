@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Hogar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/iot_hogar.css') }}">
+  <script src="{{ url_for('static', filename='js/iot_hogar.js') }}" defer></script>
+</head>
+<body>
+  <div class="iot-container">
+    <header class="iot-header">
+      <h1>IoT Hogar</h1>
+    </header>
+    <main class="iot-body">
+      <h2>Controla tus dispositivos inteligentes</h2>
+      <ul class="device-list">
+        <li class="device">
+          <span>Luz del salón</span>
+          <button class="control-button">Encender</button>
+        </li>
+        <li class="device">
+          <span>Aire acondicionado</span>
+          <button class="control-button">Apagar</button>
+        </li>
+        <li class="device">
+          <span>Televisión</span>
+          <button class="control-button">Encender</button>
+        </li>
+      </ul>
+    </main>
+    <footer class="iot-footer">
+      <p>Gestiona tus dispositivos IoT desde un solo lugar.</p>
+    </footer>
+  </div>
+</body>
+</html>

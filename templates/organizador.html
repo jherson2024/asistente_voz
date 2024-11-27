@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/organizador.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="header">
+        <h1>Organizador de Tareas</h1>
+        <div class="sector-navigation">
+            <button id="prevSector" class="nav-btn">&lt;</button>
+            <p id="currentSector">Trabajo</p>
+            <button id="nextSector" class="nav-btn">&gt;</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="task-form">
+            <h2>Agregar Nueva Tarea</h2>
+            <form id="taskForm">
+                <input type="text" id="taskInput" placeholder="Escribe una tarea..." required />
+                <select id="prioritySelect" required>
+                    <option value="" disabled selected>Prioridad</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <button type="submit" class="btn">Agregar</button>
+            </form>
+        </section>
+
+        <section class="task-list">
+            <h2>Lista de Tareas</h2>
+            <ul id="taskContainer">
+                <!-- Aquí se generarán las tareas dinámicamente -->           </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Organizador de Tareas &copy; 2024</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/organizador.js') }}" defer></script>
+</body>
+</html>
